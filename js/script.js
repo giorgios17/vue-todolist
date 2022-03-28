@@ -33,7 +33,7 @@ const app = new Vue({
             this.todoList.splice(index, 1);
         },
         addNewTodo() {
-            if (this.newTodo.text !== '') {
+            if (this.newTodo.text.trim() !== '') {
                 this.todoList.push(this.newTodo);
                 this.newTodo = { text: '', done: false }
             }
