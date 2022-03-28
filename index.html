@@ -25,7 +25,7 @@
             <ul>
                 <li v-for="(item, index) in todoList">
                     <div class="d-flex align-items-center">
-                        <div @click="isDone(item)" class="text-item">
+                        <div @click="isDone(item)" :class="lineaTesto(item)">
                             {{item.text}}
                         </div>
                         <i @click="removeTodo(index,1)" class="fa-solid fa-circle-xmark"></i>

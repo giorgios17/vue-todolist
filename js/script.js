@@ -30,19 +30,26 @@ const app = new Vue({
     },
     methods: {
         removeTodo(index) {
-            this.todoList.splice(index, 1)
+            this.todoList.splice(index, 1);
         },
         addNewTodo() {
             if (this.newTodo.text !== '') {
-                this.todoList.push(this.newTodo)
-                console.log(this.todoList)
+                this.todoList.push(this.newTodo);
+                console.log(this.todoList);
                 this.newTodo = { text: '', done: false }
             }
         },
         isDone(item) {
-            console.log('CLICK OK')
+            console.log('CLICK OK');
             item.done = !item.done;
-            console.log(this.todoList)
+            console.log(this.todoList);
+        },
+        lineaTesto(item) {
+            if (item.done === true) {
+                return 'text-line';
+            } else {
+                return '';
+            }
         }
     }
 })
