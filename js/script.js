@@ -26,7 +26,7 @@ const app = new Vue({
     el: '#root',
     data: {
         todoList: [{ text: 'Portare fuori il cane', done: false }, { text: 'Fare la spesa', done: false }, { text: 'Partire la lavatrice', done: false }],
-        newTodo: { text: '', done: false }
+        newTodo: { text: undefined, done: false }
     },
     methods: {
         removeTodo(item) {
@@ -34,8 +34,9 @@ const app = new Vue({
         },
         addNewTodo() {
             this.todoList.push(this.newTodo)
-            this.newTodo.text = ''
             console.log(this.todoList)
+            this.newTodo = { text: undefined, done: false }
+
         }
     }
 })
