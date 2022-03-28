@@ -35,14 +35,11 @@ const app = new Vue({
         addNewTodo() {
             if (this.newTodo.text !== '') {
                 this.todoList.push(this.newTodo);
-                console.log(this.todoList);
                 this.newTodo = { text: '', done: false }
             }
         },
         isDone(item) {
-            console.log('CLICK OK');
             item.done = !item.done;
-            console.log(this.todoList);
         },
         lineaTesto(item) {
             if (item.done === true) {
