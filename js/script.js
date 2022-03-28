@@ -26,11 +26,11 @@ const app = new Vue({
     el: '#root',
     data: {
         todoList: [{ text: 'Portare fuori il cane', done: false }, { text: 'Fare la spesa', done: false }, { text: 'Partire la lavatrice', done: false }],
-        newTodo: { text: '', done: false }
+        newTodo: { text: '', done: false },
     },
     methods: {
-        removeTodo(item) {
-
+        removeTodo(index) {
+            this.todoList.splice(index)
         },
         addNewTodo() {
             if (this.newTodo.text !== '') {
@@ -38,6 +38,12 @@ const app = new Vue({
                 console.log(this.todoList)
                 this.newTodo = { text: '', done: false }
             }
+        },
+        isDone(item) {
+            console.log('CLICK OK')
+            item.done = !item.done;
+            document.querySelector('.text-item').classList.add('text-line')
+            console.log(this.todoList)
         }
     }
 })

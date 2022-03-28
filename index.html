@@ -24,15 +24,18 @@
             <h2 class="text-center">Lista di cose da fare</h2>
             <ul>
                 <li v-for="(item, index) in todoList">
-                    <div>
-                        {{item.text}} <i @click="" class="fa-solid fa-circle-xmark"></i>
+                    <div class="d-flex align-items-center">
+                        <div @click="isDone(item)" class="text-item">
+                            {{item.text}}
+                        </div>
+                        <i @click="removeTodo(index)" class="fa-solid fa-circle-xmark"></i>
                     </div>
                 </li>
             </ul>
             <div class="text-center mt-5">
                 <h3>Aggiungi alla lista</h3>
                 <input @keyup.enter="addNewTodo" type="text" v-model="newTodo.text"
-                    placeholder="Inserisci altre cose da fare...">
+                    placeholder="Inserisci cose da fare...">
                 <button @click="addNewTodo" type="button" class="btn btn-success">Aggiungi</button>
             </div>
         </div>

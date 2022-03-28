@@ -26,3 +26,7 @@ body {
   cursor: pointer;
   margin-left: 20px;
 }
+
+.text-line{
+  text-decoration: line-through;
+}
