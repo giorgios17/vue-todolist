@@ -30,7 +30,7 @@ const app = new Vue({
     },
     methods: {
         removeTodo(index) {
-            this.todoList.splice(index)
+            this.todoList.splice(index, 1)
         },
         addNewTodo() {
             if (this.newTodo.text !== '') {
@@ -42,7 +42,6 @@ const app = new Vue({
         isDone(item) {
             console.log('CLICK OK')
             item.done = !item.done;
-            document.querySelector('.text-item').classList.add('text-line')
             console.log(this.todoList)
         }
     }
