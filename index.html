@@ -31,7 +31,8 @@
             </ul>
             <div class="text-center mt-5">
                 <h3>Aggiungi alla lista</h3>
-                <input type="text" v-model="newTodo.text" placeholder="Inserisci altre cose da fare...">
+                <input @keyup.enter="addNewTodo" type="text" v-model="newTodo.text"
+                    placeholder="Inserisci altre cose da fare...">
                 <button @click="addNewTodo" type="button" class="btn btn-success">Aggiungi</button>
             </div>
         </div>
