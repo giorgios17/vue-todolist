@@ -25,9 +25,17 @@ della proprietà done del todo corrispondente
 const app = new Vue({
     el: '#root',
     data: {
-        todoList: [{ text: 'Portare fuori il cane', done: true }, { text: 'Fare la spesa', done: true }, { text: 'Partire la lavatrice', done: true }]
+        todoList: [{ text: 'Portare fuori il cane', done: false }, { text: 'Fare la spesa', done: false }, { text: 'Partire la lavatrice', done: false }],
+        newTodo: { text: '', done: false }
     },
     methods: {
+        removeTodo(item) {
 
+        },
+        addNewTodo() {
+            this.todoList.push(this.newTodo)
+            this.newTodo.text = ''
+            console.log(this.todoList)
+        }
     }
-}) 
+})
